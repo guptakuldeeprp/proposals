@@ -1,0 +1,50 @@
+Make it not a part of engineering, just delivery. Observe the 10 custom fields used in the tables.
+Why is a separate application developed instead of incorporating the features in the same app?
+- Separation of concerns, isolating errors, versioning, monitoring (a way to be alerted to problems, a way to locate and repair them quickly, and a means of recovering or reprocessing any data lost)
+- Low dependency on product teams, parallel development and maintenance, separate team
+- Computationally taxing
+- Combining data from multiple applicatons independently, access control and encryption
+- Provide a platform for RPA, internal/external integration, dev-uat-prod, test bed, hot fix, analysis (Simple to start with. No AI.)
+- Different consumers may want the data to be structured differently.
+
+
+
+Our Data Pipeline App provides you the ability to access your data in several ways and define how you use it.
+To make our data structure and relationships easier to understand we simplify our data model down into a Logical Data Model. Data listed as a part of LDM comes as part of our API.
+Logical Data Model is a simplified model of our underlying product database, data aggregate the we care about (documentation included). Remove data ignorance.
+What details to include and what details to mask.
+This will be batch data integration. For realtime, access API
+
+Allow Administrators to collect their Learndot data into their own personal database for running internal queries or generating reports.
+Support variety of destinations?
+
+Push data initially and then in batch of configurable intervals?
+
+Should give a framework of abstractions (jobs) so anyone can build their own (hundreds of) data pipeline based on requirements originating in different departments, each with a different approach.
+Some sort of language to write data pipeline.
+Treat data as events to log and translate them and move across pipeline (like kafka)?
+different "data collection" processes. Must be simple to write so anyone can write.
+Providing support for different formats and apps.
+(Apache spark should help with most of pipeline technical work - 1) Data Ingestion
+2) Data Collector
+3) Data Processing
+4) Data Storage
+5) Data Query
+6) Data Visualization)
+
+Will I stage data in my app?
+Am I trying to standardize anything?
+What will be versioned (JCR or Git) ? The metadata or the entire data? What's the size of data?
+How to know if data is off or wrong? How to identify missing fields if any? How to filter it? Allow for human review.
+How will I join data from other applications to form LDM and have a clear look at data adapters. Joining here does not mean database relationship joins. It means the data can be obtained from and used by different systems.
+Will it support capacity planning for business apps in future?
+Repeatable pipeline execution? Idempotent?
+Pipeline to use one or more of - event frameworks, message bus, data persistence, Workflow mgmt (structures the tasks (or processes) in your data pipeline, supervise)
+, Serialization frameworks (convert data into more compact formats for storage and transmission.)
+
+
+API token based
+https://www.dremio.com/tutorials-resources/#basics
+https://www.bluedata.com/blog/2016/02/real-time-data-pipelines-spark-kafka-cassandra-on-docker/
+https://fivetran.com/?utm_campaign=moderndatapipeline_whitepaper&utm_medium=blog&utm_source=medium&utm_content=&utm_term=
+https://www.snaplogic.com/glossary/data-pipeline-architecture
